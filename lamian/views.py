@@ -4,5 +4,11 @@ from django.shortcuts import render
 
 def index(request):
     context = {}
+    context['index'] = ['active']
     return render(request, 'lamian/index.html', context)
-    #return HttpResponse("Hello, world. You're at the polls index.")
+
+
+def menu(request):
+    context = {}
+    context['menu'] = ['active']
+    return render(request, 'lamian/menu.html', context)

@@ -4,6 +4,8 @@ from django.conf.urls import url, include
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='index')
-    #url(r'^search-post$', views.search_post)
+    path('', views.index, name='index'),
+    url(r'^menu$', views.menu),
+    url(r'^index$', views.index),
+    url(r'^index$', views.index),
 ]

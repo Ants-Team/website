@@ -1,0 +1,126 @@
+﻿<!DOCTYPE HTML>
+<html>
+{% load static %}
+<head>
+    <title>Home</title>
+    <link href="{% static 'lamian/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{% static 'lamian/css/bootstrap.min.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'lamian/css/flexslider.css' %}" type="text/css" media="all"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href='https://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
+    <!--slider-->
+    <script src="{% static 'lamian/js/modernizr.js' %}"></script>
+
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src=" {% static 'lamian/js/libs/jquery-1.7.min.js' %}">\x3C/script>')</script>
+    <!-- FlexSlider -->
+    <script defer src="{% static 'lamian/js/jquery.flexslider.js' %}"></script>
+    <script type="text/javascript">
+        $(function () {
+            SyntaxHighlighter.all();
+        });
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                start: function (slider) {
+                    $('body').removeClass('loading');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="wrap">
+
+    <div class="header">
+        <div class="header-bot">
+            <div>
+                <img src="{% static 'lamian/images/logo.png' %}" alt="">
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div class="total">
+        <div class="menu">
+            <div class="top-nav">
+                <ul>
+                    <li class="{{ index.0 }}"><a href="/index"> Accueil </a></li>
+                    <li class="{{ about.0 }}"><a href="/about"> À propos </a></li>
+                    <li class="{{ menu.0 }}"><a href="/menu"> Menu </a></li>
+                    <li class="{{ contact.0 }}"><a href="/contact"> Contact </a></li>
+                    <li class="{{ local.0 }}"><a href="/local"> Localisation </a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+
+        {% block content %}
+        {% endblock %}
+
+
+    </div>
+
+
+    <div class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grids">
+                    <div class="col-md-4 footer-grid">
+                        <div class="footer-logo">
+                            <a href="/index">LAMIAN RESTAURANT</a>
+                            <p>20, RUE DU FOSSE DES TANNEURS</p>
+                            <p>67000 STRASBOURG</p>
+                        </div>
+                        <div>
+                            <p>TEL: (+33) 03 88 10 82 92 </p>
+                            <p>(Merci d'appeler pour vos réservations)</p>
+                        </div>
+                        <div>
+                            <ul class="follow_icon">
+                                <li><a href="#"><img src="/static/lamian/images/fb.png" alt=""></a></li>
+                                <li><a href="#"><img src="/static/lamian/images/googleplus.png" alt=""></a></li>
+                                <li><a href="#"><img src="/static/lamian/images/tw.png" alt=""></a></li>
+                                <li><a href="#"><img src="/static/lamian/images/pinterest.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 footer-grid">
+                        <h3>Opening Hours</h3>
+                        <ul>
+                            <li> Du lundi au samedi</li>
+                            <li> De 12HOO à 15H00</li>
+                            <li> Et 18H00 à 22H00</li>
+                            <li> Le Dimanche</li>
+                            <li> Fermé à midi</li>
+                            <li> Ouvert de 18H00 à 22H00</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 agile-footer-grid">
+                        <ul class="w3agile_footer_grid_list">
+                            <li><a href="/index"> Accueil </a></li>
+                            <li><a href="/about"> À propos </a></li>
+                            <li><a href="/menu"> Menu </a></li>
+                            <li><a href="/contact"> Contact </a></li>
+                            <li><a href="/local"> Localisation </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>
+
+
+
