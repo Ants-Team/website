@@ -262,6 +262,7 @@ body {
 .header {
     padding: 2%;
     background-color: black;
+    text-align: center;
 }
 
 .banner {
